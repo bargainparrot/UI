@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--<script src="assets/js/color-modes.js"></script>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Home - Bargain Parrot</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/bargain_parrot_favicon.png">    
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+    </style>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet" />
+
+    <link href="assets/css/fira-sans-font.css" rel="stylesheet">
+    <link href="assets/css/sora-font.css" rel="stylesheet">
+    <link href="assets/css/bargainparrot.css" rel="stylesheet">
+    <link href="assets/css/bargainparrot-mobile.css" rel="stylesheet">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="BargainParrot">
+    <meta property="og:description" content="Discover local deals and save with BargainParrot!">
+    <meta property="og:image" content="https://bargainparrot.com/preprod/assets/img/bargain_parrot_logo_main.png">
+    <meta property="og:url" content="https://bargainparrot.com/preprod">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BargainParrot">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BargainParrot">
+    <meta name="twitter:description" content="Discover local deals and save with BargainParrot!">
+    <meta name="twitter:image" content="https://bargainparrot.com/preprod/assets/img/bargain_parrot_logo_main.png">
+    <meta name="twitter:site" content="@bargainparrot">   
+</head>
+<body class="fira-sans-regular">
+
+<!--TOP NAV-->
+<nav class="navbar navbar-expand-md fixed-top pb-3" id="navbar">
+    <div class="container">
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sideNav" aria-controls="sideNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon border-0"></span>
+      </button>       
+        <!-- Default logo for desktop view -->
+        <a class="navbar-brand d-none d-md-block" href="/">
+          <img src="assets/img/bargain_parrot_logo.png" height="70" alt="Bargain Parrot">
+        </a>
+        <!-- Mobile logo for mobile view -->
+        <a class="navbar-brand d-md-none" href="/">
+            <img src="assets/img/bargain_parrot_logo.png" height="50" alt="Bargain Parrot">
+        </a>
+
+
+        <div class="d-flex order-1 order-md-2 ms-auto align-items-center">
+            <button class="icon-button me-2">
+                <i class="fa-solid fa-bell text-white"></i>
+                <span class="visually-hidden">Notifications </span>
+            </button>
+            <button class="icon-button me-2">
+                <i class="fa-solid fa-xs fa-cart-shopping text-white"></i>
+                <span class="visually-hidden">Cart </span>
+            </button>
+            <a href="index.html" class="btn btn-main ms-1"><i class="fa-solid fa-circle-chevron-left"></i> Back</a>
+        </div>
+    </div>
+</nav>
+<div class="d-none d-lg-block mt-4 text-main"><hr></div>
+<!--END TOP NAV-->
+
+<!--SIDE NAV-->
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="sideNav" aria-labelledby="sideNavLabel">
+  <div class="offcanvas-header border-bottom ">
+    <div class="offcanvas-title w-100" id="">
+      <div class="mt-2 ">
+        <!--Signed In-->
+        <h4 class="d-none">Hello, Chukwuemeka</h4>
+
+        <!--Guest-->
+        <div class="d-block d-flex hstack gap-3 py-2 rounded-4">
+          <button type="button" class="btn btn-main flex-fill" data-bs-toggle="modal" data-bs-target="#userLogin">Sign In</button>
+          <button type="button" class="btn btn-outline-light flex-fill">Sign Up</button>      
+        </div>
+      </div> 
+    </div>
+    <button type="button" class="btn-close p-2 ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="d-flex flex-column h-100">
+      <div class="row flex-grow-1 overflow-auto mb-3">
+        <div class="col-12">
+          <ul class="flex-column ms-1">
+            <li class="nav-item">
+              <a href="#faq" class="">
+                FAQs
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#home" class="">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="">
+                About
+              </a>
+            </li>    
+            <li class="nav-item">
+              <a href="#vendors" class="">
+                Vendors
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row border-top px-4 pt-3 mt-auto">
+          <button type="button" class="btn btn-primary btn-lg flex-fill">Sign Out</button>        
+      </div>
+    </div>
+  </div>
+</div>
+<!--END SIDE NAV-->
+
+
+
+
+<main class="my-5">
+
+  <section class="userLogin">
+    <div class="container">
+      <div class="row d-flex justify-content-center mt-sm-0">
+        <div class="col-md-4">
+          <div class="card p-4 shadow border border-0">
+            <h4 class="sora-font fw-bold">Log Into Your Account</h4>
+            <span class="text-body-secondary small">Don't have an account? <a href="#">Sign Up</a></span>
+
+            <div class="row social_login my-3">
+                <div class="col-sm-4 mb-2">
+                    <button type="button" class="google_btn btn btn-outline-warning w-100">
+                        <img class="" height="20" src="assets/img/google_logo.png" alt="Sign in wth Google"/>
+                    </button>
+                </div>
+                <div class="col-sm-4 mb-2">
+                    <button type="button" class="btn btn-outline-primary w-100">
+                        <img class="" height="20" src="assets/img/facebook_logo.png" alt="Sign in wth Facebook"/>
+                    </button>
+                </div>
+                <div class="col-sm-4 mb-2">
+                    <button type="button" class="btn btn-outline-dark w-100">
+                        <img class="" height="20" src="assets/img/apple_logo.png" alt="Sign in wth Apple"/>
+                    </button>
+                </div>                                                                                
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-floating mb-3">                            
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput" class="small"><i class="far fa-envelope"></i> Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword" class="small"><i class="fas fa-lock"></i> Password</label>
+                    <i class="bi bi-eye-slash togglePassword"></i>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberCheckbox">
+                        <label class="form-check-label small" for="rememberCheckbox"><small>Remember Me</small></label>
+                    </div>                                    
+                </div>
+                <div class="col-6 small d-flex justify-content-end align-items-center">
+                    <a href="#" class="small bp-text-dark">Forgot Password?</a>
+                </div>
+            </div>
+            
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-main btn-lg w-100" type="button"><small>Login</small></button>
+                </div>  
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+    
+</main>
+
+
+<footer class="text-light sora-regular pt-5 pb-3" id="footer">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <!-- Logo and Links -->
+      <div class="col-md-3 mb-4">
+        <img src="assets/img/bargain_parrot_logo_white.png" alt="BargainParrot Logo" class="img-fluid mb-3">
+        <ul class="list-unstyled">
+          <li><a href="#" class="">Privacy Policy</a></li>
+          <li><a href="#" class="">Terms and Condition</a></li>
+        </ul>
+      </div>
+      <!-- Information -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase">Information</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="">Old City Street, USA</a></li>
+          <li><a href="#" class="">About us</a></li>
+          <li><a href="#" class="">Check out</a></li>
+          <li><a href="#" class="">Return and refund</a></li>
+        </ul>
+      </div>
+      <!-- Help -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase">Help</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="">My Account</a></li>
+          <li><a href="#" class="">Free Home Delivery</a></li>
+          <li><a href="#" class="">Cart</a></li>
+          <li><a href="#" class="">Order Status</a></li>
+        </ul>
+      </div>
+      <!-- Social Media -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase">Social Media</h5>
+        <ul class="list-inline social-icons">
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fa-brands fa-instagram"></i><span class="visually-hidden">Instagram</span></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fa-brands fa-x-twitter"></i><span class="visually-hidden">Twitter</span></a></li>
+          <li class="list-inline-item"><a href="#" class="text-white"><i class="fa-brands fa-facebook-f"></i><span class="visually-hidden">Facebook</span></a></li>
+          
+        </ul>
+        <p class="mb-1"><i class="fa fa-phone me-2"></i> +(00)-000-000-0000</p>
+        <p><i class="fa fa-envelope me-2"></i> infoname@mail.com</p>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col text-center">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#" class="">Category</a></li>
+          <li class="list-inline-item"><a href="#" class="">Tanks</a></li>
+          <li class="list-inline-item"><a href="#" class="">T-Shirts</a></li>
+          <li class="list-inline-item"><a href="#" class="">Polo Shirts</a></li>
+          <li class="list-inline-item"><a href="#" class="">Casual Shirts</a></li>
+          <li class="list-inline-item"><a href="#" class="">Bandana</a></li>
+          <li class="list-inline-item"><a href="#" class="">Men Belts</a></li>
+        </ul>
+        <p class="small mt-3">© BargainParrot 2024 | All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) { 
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+      });
+      
+      // Function to close the side navigation
+      function closeSideNav(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        $("#sideNav").collapse('hide');
+        $("#overlay").removeClass('show');
+        $(".closeBtn").removeClass('show');
+      }
+
+      $("#sideNav").on('shown.bs.collapse', function () {
+        $("#overlay").addClass('show');
+        $(".closeBtn").addClass('show');
+      });
+
+      $("#userLogin").on('shown.bs.modal', function () {
+        $(".closeBtn").removeClass('show');
+      });
+
+      $(".modal_closebtn").on('click', function(){
+        $(".closeBtn").addClass('show');
+      });
+      
+
+    // Event listener for close button in the side navigation
+    $(".closeBtn").on("click", closeSideNav); 
+
+  });
+</script>
+<div id="overlay" class="overlay"></div>
+</body>
+</html>

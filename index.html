@@ -45,7 +45,7 @@
 <!--TOP NAV-->
 <nav class="navbar navbar-expand-md fixed-top pb-3" id="navbar">
     <div class="container">
-      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sideNav" aria-controls="sideNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sideNav" aria-controls="sideNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon border-0"></span>
       </button>       
         <!-- Default logo for desktop view -->
@@ -60,7 +60,7 @@
         <div class="col-md-4 d-none d-sm-block">
           <div class="nav-input-container ms-3">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" class="form-control" placeholder="Search products, brands and categories">
+              <input type="text" class="form-control" placeholder="Search products, brands and categories" aria-label="Search">
           </div>
         </div>
       
@@ -73,12 +73,20 @@
         </div>
 
         <div class="d-flex order-1 order-md-2 ms-auto align-items-center">
-            <button class="icon-button me-2">
+            <button class="icon-button me-3 position-relative" data-bs-toggle="offcanvas" data-bs-target="#notificationSidebar" aria-controls="notificationSidebar" aria-expanded="false" aria-label="Toggle Notifications">
                 <i class="fa-solid fa-bell text-white"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  99+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
                 <span class="visually-hidden">Notifications </span>
             </button>
-            <button class="icon-button me-2">
+            <button class="icon-button me-3 position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar" aria-controls="cartSidebar" aria-expanded="false" aria-label="Toggle Shopping Cart">
                 <i class="fa-solid fa-xs fa-cart-shopping text-white"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                  5
+                  <span class="visually-hidden">unread messages</span>
+                </span>
                 <span class="visually-hidden">Cart </span>
             </button>
             <div class="d-none d-sm-block">
@@ -100,8 +108,8 @@
 
               <!--Guest-->
               <div class="guest">
-                <a href="#" class="">Register</a>
-                <button type="button" class="btn btn-main ms-1" data-bs-toggle="modal" data-bs-target="#userLogin">Sign In</button>
+                <a href="#" class="register">Register</a>
+                <button type="button" class="btn btn-main btn-lg ms-1" data-bs-toggle="modal" data-bs-target="#userLogin">Sign In</button>
               </div>     
             </div>
         </div>
@@ -111,61 +119,398 @@
 <!--END TOP NAV-->
 
 <!--SIDE NAV-->
-<button type="button" class="btn icon-button closeBtn"><i class="fas fa-times-circle fa-lg"></i> <span class="visually-hidden">x</span></button>
-<div class="offcanvas-nav collapse" id="sideNav">
-  <div class="p-4 border-bottom ">
-    <!--Signed In-->
-    <div class="d-none">Hello, Chukwuemeka</div>
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="sideNav" aria-labelledby="sideNav">
+  <div class="offcanvas-header border-bottom ">
+    <div class="offcanvas-title w-100" id="">
+      <div class="mt-2 ">
+        <!--Signed In-->
+        <h4 class="d-none">Hello, Chukwuemeka</h4>
 
-    <!--Guest-->
-    <div class="d-flex hstack gap-3 py-2 rounded-4">
-      <button type="button" class="btn btn-main flex-fill" data-bs-toggle="modal" data-bs-target="#userLogin">Sign In</button>
-      <button type="button" class="btn btn-outline-light flex-fill">Sign Up</button>      
+        <!--Guest-->
+        <div class="d-block d-flex hstack gap-3 py-2 rounded-4">
+          <a href="login.html" class="btn btn-main flex-fill">Sign In</a>
+          <button type="button" class="btn btn-outline-light flex-fill">Sign Up</button>      
+        </div>
+      </div> 
     </div>
-
+    <button type="button" class="btn-close p-2 ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <div class="offcanvas-body">
+    <div class="d-flex flex-column h-100">
+      <div class="row flex-grow-1 overflow-auto mb-3">
+        <div class="col-12">
+          <ul class="flex-column ms-1">
+            <li class="nav-item">
+              <a href="#faq" class="">
+                FAQs
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#home" class="">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="">
+                About
+              </a>
+            </li>    
+            <li class="nav-item">
+              <a href="#vendors" class="">
+                Vendors
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="px-2 flex-column mb-auto mt-2">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a href="#faq" class="nav-link text-white">
-          FAQs
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#home" class="nav-link text-white">
-          Blog
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#about" class="nav-link text-white">
-          About
-        </a>
-      </li>    
-      <li class="nav-item">
-        <a href="#vendors" class="nav-link text-white">
-          Vendors
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="border-top p-4 d-flex">
-    <button type="button" class="btn btn-primary btn-lg flex-fill">Sign Out</button>
+      <div class="row border-top px-4 pt-3 mt-auto">
+          <button type="button" class="btn btn-primary btn-lg flex-fill">Sign Out</button>        
+      </div>
+    </div>
   </div>
 </div>
 <!--END SIDE NAV-->
+
+<!--NOTIFICATION SIDEBAR-->
+<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="notificationSidebar" aria-labelledby="notificationSidebar">
+  <div class="offcanvas-header border-bottom ">
+    <div class="offcanvas-title w-100" id="">
+      <div class="mt-2 ">
+        <h4 class="text-black-50">Notifications</h4>
+      </div> 
+    </div>
+    <button type="button" class="btn-close p-2 ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-4">
+      <div class="d-flex">
+        <div class="col-9">
+          <h6 class="text-black-50">Received Notifications (2)</h6>
+        </div>
+        <div class="col-3 d-flex justify-content-end align-items-center small">
+          <a href="#" class="text-main"><small>Clear</small></a>
+        </div>
+      </div>
+
+      <div class="row overflow-y-auto my-3">
+        <div class="col-12">
+          <div class="notifications sora-font">
+            <div class="row mb-4 border-bottom pb-2">
+              <div class="col-8">
+                <h6>Tutorial</h6>
+                <div class="message my-2">
+                  Want to know how BargainParrot works? We can send tutorials to your email.
+                  <p class="mt-2"><a href="#" class="text-danger fw-bold">Send email</a></p>             
+                </div>
+
+              </div>
+              <div class="col-4 d-flex align-content-center">
+                <img src="assets/img/product_images/pizza.png" alt="Tutorial Image" class="rounded w-100 h-100 object-fit-cover">
+              </div>
+            </div>
+
+            <div class="row mb-4 border-bottom pb-2">
+              <div class="col-8">
+                <h6>Rate onboarding</h6>
+                <div class="message my-2">
+                  Help us serve you better, rate our onboarding process.
+                  <div class="rating mt-2 text-black-50">
+                    <i class="fa-regular fa-star" data-value="1"></i>
+                    <i class="fa-regular fa-star" data-value="2"></i>
+                    <i class="fa-regular fa-star" data-value="3"></i>
+                    <i class="fa-regular fa-star" data-value="4"></i>
+                    <i class="fa-regular fa-star" data-value="5"></i>
+                  </div>
+                  <p class="mt-2"><a href="#" class="text-danger fw-bold">Add Feedback</a></p>
+                </div>
+              </div>
+              <div class="col-4 d-flex align-content-center">
+                <img src="assets/img/product_images/pizza.png" alt="Tutorial Image" class="rounded w-100 h-100 object-fit-cover">
+              </div>
+            </div>    
+                          
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+<!--END NOTIFICATION SIDEBAR-->
+
+<!--CART SIDEBAR-->
+<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebar">
+  <div class="offcanvas-header border-bottom ">
+    <div class="offcanvas-title w-100" id="">
+      <div class="mt-2 ">
+        <h4 class="text-black-50">Cart</h4>
+      </div> 
+    </div>
+    <button type="button" class="btn-close p-2 ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-3 d-flex flex-column h-100">
+      <div class="d-flex">
+        <div class="col-12">
+          <h6 class="text-black-50">Shopping Cart (5)</h6>
+        </div>
+      </div>
+
+      <div class="row d-flex mt-2 px-3">
+        <div class="col-6 d-flex align-items-center">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="allCartItems" id="allCartItems" checked>
+            <label class="form-check-label" for="allCartItems">
+              Select all items
+            </label>
+          </div>
+        </div>
+        <div class="col-6 d-flex justify-content-end align-items-center small">
+          <a href="#" class="text-main"><small>Delete selected items</small></a>
+        </div>
+      </div>      
+
+      <div class="row flex-grow-1 overflow-y-auto my-3">
+
+          <div class="cart-items sora-font">
+            <div class="hstack gap-2 align-items-center d-flex cart-item-single px-3 py-3">    
+              <!-- Checkbox -->
+              <div class="flex-shrink-1 me-2">
+                <input type="checkbox" class="form-check-input" id="cartItem">
+                <label class="form-check-label visually-hidden" for="cartItem">
+                  Select all items
+                </label>
+              </div>
+          
+              <!-- Image -->
+              <div class="me-2">
+                <img src="assets/img/product_images/pizza.png" alt="Pizza" class="rounded float-start">
+              </div>
+          
+              <!-- Product Info -->
+              <div class="flex-grow-1">
+                <p class="fw-bold mb-1">Dominos Pizza - Pizza</p>
+                <p class="mb-1 text-muted small">Lagos Island, Nigeria</p>
+                <p class="mb-0 text-warning fw-bold">£5.00</p>
+              </div>
+          
+              <!-- Quantity Controls -->
+              <div class="">
+                <div class=" d-flex align-items-center">
+                  <button class="quantity-button remove" type="button"><i class="fa-solid fa-minus"></i><span class="visually-hidden">Remove</span></button>
+                  <span class="mx-2">1</span>
+                  <button class="quantity-button add" type="button"><i class="fa-solid fa-plus"></i><span class="visually-hidden">Add</span></button>
+                </div>
+  
+                <div class="d-flex justify-content-center small mt-2">
+                  <a href="#" class="text-main">Delete</a>
+                </div>              
+              </div>        
+            </div>            
+                          
+          </div>
+
+          <div class="cart-items sora-font">
+            <div class="hstack gap-2 align-items-center d-flex cart-item-single px-3 py-3">    
+              <!-- Checkbox -->
+              <div class="flex-shrink-1 me-2">
+                <input type="checkbox" class="form-check-input" id="cartItem">
+                <label class="form-check-label visually-hidden" for="cartItem">
+                  Select all items
+                </label>
+              </div>
+          
+              <!-- Image -->
+              <div class="me-2">
+                <img src="assets/img/product_images/pizza.png" alt="Pizza" class="rounded float-start">
+              </div>
+          
+              <!-- Product Info -->
+              <div class="flex-grow-1">
+                <p class="fw-bold mb-1">Dominos Pizza - Pizza</p>
+                <p class="mb-1 text-muted small">Lagos Island, Nigeria</p>
+                <p class="mb-0 text-warning fw-bold">£5.00</p>
+              </div>
+          
+              <!-- Quantity Controls -->
+              <div class="">
+                <div class=" d-flex align-items-center">
+                  <button class="quantity-button remove" type="button"><i class="fa-solid fa-minus"></i><span class="visually-hidden">Remove</span></button>
+                  <span class="mx-2">1</span>
+                  <button class="quantity-button add" type="button"><i class="fa-solid fa-plus"></i><span class="visually-hidden">Add</span></button>
+                </div>
+  
+                <div class="d-flex justify-content-center small mt-2">
+                  <a href="#" class="text-main">Delete</a>
+                </div>              
+              </div>        
+            </div>            
+                          
+          </div>
+
+          <div class="cart-items sora-font">
+            <div class="hstack gap-2 align-items-center d-flex cart-item-single px-3 py-3">    
+              <!-- Checkbox -->
+              <div class="flex-shrink-1 me-2">
+                <input type="checkbox" class="form-check-input" id="cartItem">
+                <label class="form-check-label visually-hidden" for="cartItem">
+                  Select all items
+                </label>
+              </div>
+          
+              <!-- Image -->
+              <div class="me-2">
+                <img src="assets/img/product_images/pizza.png" alt="Pizza" class="rounded float-start">
+              </div>
+          
+              <!-- Product Info -->
+              <div class="flex-grow-1">
+                <p class="fw-bold mb-1">Dominos Pizza - Pizza</p>
+                <p class="mb-1 text-muted small">Lagos Island, Nigeria</p>
+                <p class="mb-0 text-warning fw-bold">£5.00</p>
+              </div>
+          
+              <!-- Quantity Controls -->
+              <div class="">
+                <div class=" d-flex align-items-center">
+                  <button class="quantity-button remove" type="button"><i class="fa-solid fa-minus"></i><span class="visually-hidden">Remove</span></button>
+                  <span class="mx-2">1</span>
+                  <button class="quantity-button add" type="button"><i class="fa-solid fa-plus"></i><span class="visually-hidden">Add</span></button>
+                </div>
+  
+                <div class="d-flex justify-content-center small mt-2">
+                  <a href="#" class="text-main">Delete</a>
+                </div>              
+              </div>        
+            </div>            
+                          
+          </div>
+          
+          <div class="cart-items sora-font">
+            <div class="hstack gap-2 align-items-center d-flex cart-item-single px-3 py-3">    
+              <!-- Checkbox -->
+              <div class="flex-shrink-1 me-2">
+                <input type="checkbox" class="form-check-input" id="cartItem">
+                <label class="form-check-label visually-hidden" for="cartItem">
+                  Select all items
+                </label>
+              </div>
+          
+              <!-- Image -->
+              <div class="me-2">
+                <img src="assets/img/product_images/pizza.png" alt="Pizza" class="rounded float-start">
+              </div>
+          
+              <!-- Product Info -->
+              <div class="flex-grow-1">
+                <p class="fw-bold mb-1">Dominos Pizza - Pizza</p>
+                <p class="mb-1 text-muted small">Lagos Island, Nigeria</p>
+                <p class="mb-0 text-warning fw-bold">£5.00</p>
+              </div>
+          
+              <!-- Quantity Controls -->
+              <div class="">
+                <div class=" d-flex align-items-center">
+                  <button class="quantity-button remove" type="button"><i class="fa-solid fa-minus"></i><span class="visually-hidden">Remove</span></button>
+                  <span class="mx-2">1</span>
+                  <button class="quantity-button add" type="button"><i class="fa-solid fa-plus"></i><span class="visually-hidden">Add</span></button>
+                </div>
+  
+                <div class="d-flex justify-content-center small mt-2">
+                  <a href="#" class="text-main">Delete</a>
+                </div>              
+              </div>        
+            </div>            
+                          
+          </div>          
+
+          <div class="cart-items sora-font">
+            <div class="hstack gap-2 align-items-center d-flex cart-item-single px-3 py-3">    
+              <!-- Checkbox -->
+              <div class="flex-shrink-1 me-2">
+                <input type="checkbox" class="form-check-input" id="cartItem">
+                <label class="form-check-label visually-hidden" for="cartItem">
+                  Select all items
+                </label>
+              </div>
+          
+              <!-- Image -->
+              <div class="me-2">
+                <img src="assets/img/product_images/pizza.png" alt="Pizza" class="rounded float-start">
+              </div>
+          
+              <!-- Product Info -->
+              <div class="flex-grow-1">
+                <p class="fw-bold mb-1">Dominos Pizza - Pizza</p>
+                <p class="mb-1 text-muted small">Lagos Island, Nigeria</p>
+                <p class="mb-0 text-warning fw-bold">£5.00</p>
+              </div>
+          
+              <!-- Quantity Controls -->
+              <div class="">
+                <div class=" d-flex align-items-center">
+                  <button class="quantity-button remove" type="button"><i class="fa-solid fa-minus"></i><span class="visually-hidden">Remove</span></button>
+                  <span class="mx-2">1</span>
+                  <button class="quantity-button add" type="button"><i class="fa-solid fa-plus"></i><span class="visually-hidden">Add</span></button>
+                </div>
+  
+                <div class="d-flex justify-content-center small mt-2">
+                  <a href="#" class="text-main">Delete</a>
+                </div>              
+              </div>        
+            </div>            
+                          
+          </div>
+
+      </div>
+      <div class="row border-top pt-3 mt-auto">
+        <div class="cartPrice mx-auto px-4">
+          <div class="row mb-2">
+            <div class="col-9">
+              Sub total (5 items)
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+              <p><span class="fw-bold">£120</span><sup>.54</sup></p>
+            </div>         
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-9">
+              Delivery Fee
+            </div>
+            <div class="col-3 d-flex justify-content-end fw-bold">
+              <p><span class="fw-bold">£3</span><sup>.20</sup></p>
+            </div>           
+          </div>
+
+          <div class="row mb-4 fw-bold">
+            <div class="col-9">
+              Total
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+              <p><span class="fw-bold">£123</span><sup>.20</sup></p>
+            </div>           
+          </div>    
+        </div>    
+        <button type="button" class="btn btn-main btn-lg flex-fill mx-3">Checkout</button>        
+      </div>
+
+  </div>
+</div>
+<!--END CART SIDEBAR-->
 
 <!-- Login Modal -->
 <div class="modal fade" id="userLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="userLoginLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content p-4">
-      <div class="modal-header d-flex justify-content-end border border-0 p-0">
-          <a href="#" class="modal_closebtn text-main float-end" data-bs-dismiss="modal"><i class="fas fa-times-circle fa-sm"></i> <span class="visually-hidden">Close</span></a>
-      </div>
-      <div class="modal-body">
+      <div class="modal-header row border border-0 p-0 px-2">
+        <div class="col-9">
           <h4 class="sora-font fw-bold">Log Into Your Account</h4>
+        </div>
+        <div class="col-3 d-flex justify-content-end ">
+          <a href="#" class="modal_closebtn text-main float-end" data-bs-dismiss="modal"><i class="fas fa-times-circle fa-sm"></i> <span class="visually-hidden">Close</span></a>
+        </div>
+      </div>
+      <div class="modal-body">          
           <span class="text-body-secondary small">Don't have an account? <a href="#">Sign Up</a></span>
-
           <div class="row social_login my-3">
               <div class="col-sm-4 mb-2">
                   <button type="button" class="google_btn btn btn-outline-warning w-100">
@@ -194,13 +539,13 @@
                   <i class="bi bi-eye-slash togglePassword"></i>
               </div>
               <div class="row mb-3">
-                  <div class="col-sm-6">
+                  <div class="col-6">
                       <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          <label class="form-check-label small" for="exampleCheck1"><small>Remember Me</small></label>
+                          <input type="checkbox" class="form-check-input" id="rememberCheckbox">
+                          <label class="form-check-label small" for="rememberCheckbox"><small>Remember Me</small></label>
                       </div>                                    
                   </div>
-                  <div class="col-sm-6 small d-flex justify-content-end align-items-end">
+                  <div class="col-6 small d-flex justify-content-center align-items-end">
                       <a href="#" class="small bp-text-dark">Forgot Password?</a>
                   </div>
               </div>
@@ -320,8 +665,8 @@
         <div class="col-9 fs-4 text-black-50 align-self-center">Deals Closing Soon</div>
         <div class="col text-end small align-self-center"><a href="#" class="text-main">See all <i class="fa-solid fa-circle-chevron-right fa-xs"></i></a></div>
       </div> 
-      <div class="product-row hstack gap-3">
-        <div>
+      <div class="product-row ms-0 hstack gap-4">
+        <div class="col-6 col-sm-3">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -365,7 +710,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="col-6 col-sm-3">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -409,7 +754,7 @@
           </div>
         </div>
         
-        <div>
+        <div class="col-6 col-sm-3">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -453,7 +798,7 @@
           </div>
         </div>
         
-        <div>
+        <div class="col-6 col-sm-3">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -497,7 +842,7 @@
           </div>
         </div>
         
-        <div>
+        <div class="col-6 col-sm-3">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -541,7 +886,7 @@
           </div>
         </div>
         
-        <div>
+        <div class="col-6 col-sm-3">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -584,10 +929,6 @@
               </div>
           </div>
         </div>        
-
-        
-          
-
       </div>     
     </div>
   </section>
@@ -600,7 +941,7 @@
         <div class="fs-4 text-black-50">Hot Deals of the Day!</div>
       </div> 
       <div class="row g-4">
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -644,7 +985,7 @@
           </div>
         </div>
 
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -688,7 +1029,7 @@
           </div>
         </div>  
         
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -732,7 +1073,7 @@
           </div>
         </div>
 
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -776,7 +1117,7 @@
           </div>
         </div>   
         
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -820,7 +1161,7 @@
           </div>
         </div>
 
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -864,7 +1205,7 @@
           </div>
         </div>  
         
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -908,7 +1249,7 @@
           </div>
         </div>
 
-        <div class="col-md-3 d-flex justify-content-center">
+        <div class="col-md-3 col-6 d-flex justify-content-center">
           <div class="card product-card">
               <!-- Image and badge -->
               <a href="#">
@@ -954,32 +1295,13 @@
       </div> 
       
       <div class="d-flex justify-content-center mt-4">
-        <a href="" type="button" class="btn btn-outline-light px-5 py-3"><span class="my-2">See all <i class="fa-solid fa-circle-chevron-right fa-xs"></i></span></a>
+        <a href="" type="button" class="btn btn-lg btn-outline-light px-5 py-3"><span class="my-2">See all <i class="fa-solid fa-circle-chevron-right fa-xs"></i></span></a>
       </div>
     </div>
   </section>
   <!--End Closing Soon-->  
     
 </main>
-
-<!--
-<div class="container-fluid bg-dark foot mt-5">
-  <div class="container">
-    <footer class="">
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-3 border-top">
-        <p class="text-white-50">&copy; 2024 BargainParrot Inc. All rights reserved.</p>
-        <ul class="list-unstyled d-flex">
-          <li class="ms-3"><a class="text-primary" href="https://www.x.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-x-twitter fa-xl"></i><span class="visually-hidden">Twitter</span></a></li>
-
-          <li class="ms-3"><a class="text-primary" href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-instagram fa-xl"></i><span class="visually-hidden">Instagram</span></a></li>
-
-          <li class="ms-3"><a class="text-primary" href="https://www.faceook.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-facebook fa-xl"></i><span class="visually-hidden">Facebook</span></a></li>
-        </ul>
-      </div>
-    </footer>
-  </div>
-</div>
--->
 
 <footer class="text-light sora-regular pt-5 pb-3" id="footer">
   <div class="container">
@@ -1057,33 +1379,23 @@
         }
       });
       
-      // Function to close the side navigation
-      function closeSideNav(event) {
-        event.preventDefault(); // Prevent the default anchor behavior
-        $("#sideNav").collapse('hide');
-        $("#overlay").removeClass('show');
-        $(".closeBtn").removeClass('show');
-      }
 
-      $("#sideNav").on('shown.bs.collapse', function () {
-        $("#overlay").addClass('show');
-        $(".closeBtn").addClass('show');
+
+    $('.fa-star').click(function() {
+      var selectedValue = $(this).data('value');
+  
+      // Clear all previous selections
+      $('.fa-star').removeClass('fa-solid selected').addClass('fa-regular');
+  
+      // Highlight the selected star and all previous stars
+      $('.fa-star').each(function() {
+        if ($(this).data('value') <= selectedValue) {
+          $(this).removeClass('fa-regular').addClass('fa-solid selected');
+        }
       });
-
-      $("#userLogin").on('shown.bs.modal', function () {
-        $(".closeBtn").removeClass('show');
-      });
-
-      $(".modal_closebtn").on('click', function(){
-        $(".closeBtn").addClass('show');
-      });
-      
-
-    // Event listener for close button in the side navigation
-    $(".closeBtn").on("click", closeSideNav); 
+    });
 
   });
 </script>
-<div id="overlay" class="overlay"></div>
 </body>
 </html>

@@ -141,6 +141,28 @@ a:hover {
     }
 }
 
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus,
+.navbar-toggler-icon:active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+.offcanvas ul {
+    line-height: 200%;
+    list-style: none;
+}
+
+.offcanvas .nav-item a {
+    color: #FFC55A;
+}
+
+.offcanvas .nav-item a:hover {
+    color: #333 !important;
+}
 
 .icon-button {
     background-color: #FFC75F;
@@ -164,10 +186,15 @@ a:hover {
 }  
 
 .guest {
-    a {
+    .register {
         font-size: small;
-        color: #333;
+        color: greenyellow;
         text-decoration: none;
+    }
+
+    .register:focus {
+        text-decoration: none !important;
+        color: yellow;
     }
 } 
 
@@ -235,7 +262,10 @@ nav .dropdown-menu a:focus, a:hover {
 }
 
 .btn-lg {
-    /* font-size: 0.7rem !important; */
+    font-size: 0.85rem !important;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+
 }
 
 .btn-primary {
@@ -354,7 +384,7 @@ nav .dropdown-menu a:focus, a:hover {
   
 
 /*Login Styles*/
-#userLogin {
+#userLogin, .userLogin {
 
     .modal_closebtn { 
       font-size: 2em;
@@ -397,7 +427,7 @@ nav .dropdown-menu a:focus, a:hover {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 1rem; /* Space between items */
+
 
     /* Hide scrollbar for IE, Edge, and Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
@@ -418,7 +448,6 @@ nav .dropdown-menu a:focus, a:hover {
 } 
 
 .product-card {
-    width: 20rem; 
     position: relative;
     border: none;
     transition: box-shadow 0.3s ease;
@@ -497,5 +526,108 @@ nav .dropdown-menu a:focus, a:hover {
     
     .social-icons .list-inline-item a:hover {
         color: #FFC55A; 
+    }
+}
+
+#notificationSidebar {
+    .notifications {
+        .message {
+            font-size: smaller;
+        }
+
+        a {
+            text-decoration: underline !important;
+        }
+
+        a:hover {
+            text-decoration: none !important;
+        }
+
+        img {
+            width: 100px;
+            max-height: 100px;
+        }
+
+
+        .rating {            
+            i {
+                cursor: pointer;
+                font-size: large;            
+            }
+            .selected {
+            color: #FFC55A;            
+            }
+        }
+    }
+}
+
+#cartSidebar {
+    .cart-items {
+        font-size: smaller;
+
+        img {
+            width: 50px;
+            max-height: 50px;
+        }
+
+        .quantity-button {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .remove {
+            border: 1px solid #333;
+            color: #333;
+        }
+
+        .add {
+            border: 1px solid #FFC55A;
+            color: #FFC55A;
+            font-size: larger;
+        }   
+        
+        a {
+            text-decoration: underline !important;
+        }
+
+        a:hover {
+            text-decoration: none !important;
+        }  
+        
+        .cart-item-single {
+            margin-top: 10px;
+            border-bottom: 1px solid #ECECEC;
+            border-radius: 15px;
+        }
+
+
+
+
+    }
+
+    .form-check-input {
+        border-radius: 50%;
+        font-size: larger;
+        border: 1px solid #FFC55A;
+        cursor: pointer;
+    }
+    
+    .form-check-input:checked {
+        border-color:#fc4100 !important;
+        background-color: #fc4100;
+    
+    }
+    
+    .form-check-input:focus {
+        outline: none;
+        box-shadow: none;
+    }  
+    
+    .cartPrice {
+        color: #6D6D6D !important;
     }
 }
