@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    padding-top: 80px; 
+    padding-top: 80px;
+    color: #6D6D6D !important;
 }
 
 a {
@@ -50,6 +51,9 @@ a:hover {
     margin-right: 0;
 }
 
+#navbar a:hover  {
+    background-color: transparent !important;
+}
 
 .nav-input-container {
     display: flex;
@@ -188,14 +192,10 @@ a:hover {
 .guest {
     .register {
         font-size: small;
-        color: greenyellow;
+        color: #C2C7D0;
         text-decoration: none;
     }
 
-    .register:focus {
-        text-decoration: none !important;
-        color: yellow;
-    }
 } 
 
 nav .dropdown-menu {
@@ -319,9 +319,12 @@ nav .dropdown-menu a:focus, a:hover {
     background-color: #FFECE6;
 }
 
+.bg-secondary {
+    background-color: #FFC55A56 !important;
+}
 
 .text-accent {
-    color: #00215E
+    color: #9C7837
 }
 
 .text-main {
@@ -409,11 +412,8 @@ nav .dropdown-menu a:focus, a:hover {
     }
   
     .togglePassword {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      cursor: pointer;
+      right: 10px !important;
+      top: 30%;
     }
   
     button:hover{
@@ -464,10 +464,86 @@ nav .dropdown-menu a:focus, a:hover {
 }
 
 .product-card .old-price {
-    color: #C2C7D0;
+    color: #d0d4db;
 }
 
+.quantity-button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
 
+.remove {
+    border: 1px solid #6D6D6D;
+    color: #6D6D6D;
+    background-color: #B3B9C4;
+}
+
+.add {
+    border: 1px solid #FFC55A;
+    color: #FFC55A;
+    background-color: #FFC55A30;
+} 
+
+.single-product-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #9C7837;
+    color: #9C7837;
+}
+
+.single-product-img {
+    height: 400px;
+    width: 100%;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 40px;
+    object-fit: scale !important;
+    border: 1px solid #bdbbbb;
+
+}
+
+img.thumbnail.active {
+    border: 1px solid #FC4100;
+}
+
+#mobileRatings {
+    .stars i {
+        margin-right: 2px;
+    }
+
+    .progress {
+        height: 5px !important;
+    }
+}
+
+#Ratings {
+    .bigStars{
+        display: flex;
+        align-items: center;
+        justify-content:stretch;        
+    }
+
+    .bigStars i {
+        font-size:xx-large;
+        flex: 1 1 auto;
+    }
+
+    .detail {
+        font-size:x-small;
+        font-weight: bold;
+    }
+
+}
 
 #cta {
     background-color: #f8f9fa;

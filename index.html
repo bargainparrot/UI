@@ -533,10 +533,12 @@
                   <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput" class="small"><i class="far fa-envelope"></i> Email address</label>
               </div>
-              <div class="form-floating mb-3">
+              <div class="form-floating mb-3 position-relative">                
                   <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword" class="small"><i class="fas fa-lock"></i> Password</label>
-                  <i class="bi bi-eye-slash togglePassword"></i>
+                  <div class="togglePassword position-absolute d-flex align-items-center">
+                      <i class="bi bi-eye-slash"></i>                  
+                  </div>
               </div>
               <div class="row mb-3">
                   <div class="col-6">
@@ -559,7 +561,7 @@
 <!--END Login Modal-->
 
 
-<main class="mb-5">
+<main class="mb-5 container">
   <!--Search (Mobile View)-->
   <section class="">
     <div class="col-md-4 d-block d-sm-none">
