@@ -778,3 +778,58 @@ img.thumbnail.active {
   .sidebar-heading {
     font-size: .75rem;
   }
+
+  .carousel-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem; /* Space between items */
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.carousel-row::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-row::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.carousel-row::-webkit-scrollbar-track {
+    background: transparent;
+} 
+
+.carousel-card {
+    min-width: 250px; 
+    transition: box-shadow 0.3s ease;
+}
+
+
+/** DataTables**/
+
+.active>.page-link, .page-link.active {
+    background-color: #fc4100;
+    border: 1px solid #fc4100 !important;
+    color: white !important;
+}
+
+button.page-link {
+    color: #fc4100 !important;
+}
+
+button.page-link:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.bg-datatable {
+    background-color: #FFC55A !important;
+}
+
+.bp-datatables  {
+    color: purple !important;
+}
