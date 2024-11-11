@@ -46,9 +46,10 @@
 <!--TOP NAV-->
 <nav class="navbar navbar-expand-md pb-3 sticky-top border-bottom mb-2" id="navbar">
   <div class="container-fluid">
-    <button class="btn navbar-toggler custom-toggler" type="button" onclick="toggleSidebar()" aria-label="sidebar">
-      <span class="navbar-toggler-icon border-0"></span>
-    </button>       
+      <button class="btn navbar-toggler custom-toggler" type="button" onclick="toggleSidebar()" aria-label="sidebar">
+        <span class="navbar-toggler-icon border-0"></span>
+      </button>       
+
       <!-- Default logo for desktop view -->
       <a class="navbar-brand d-none d-md-block" href="/">
         <img src="../assets/img/bargain_parrot_logo.png" height="70" alt="Bargain Parrot">
@@ -58,23 +59,8 @@
           <img src="../assets/img/bargain_parrot_logo.png" height="50" alt="Bargain Parrot">
       </a>
 
-      <div class="col-md-4 d-none d-sm-block">
-        <div class="nav-input-container ms-3">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" class="form-control" placeholder="Search products, brands and categories" aria-label="Search">
-        </div>
-      </div>
-    
-      <div class="col-md-3 d-none d-sm-block">
-        <div class="nav-input-container ms-3">
-            <img src="../assets/img/uk-flag.png" alt="UK Flag" class="uk-flag">
-            <input type="text" placeholder="Enter location" aria-label="Location">
-            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="sr-only"><i class="fa-solid fa-chevron-down">Down</i></span></button>
-        </div>
-      </div>
-
-      <div class="d-flex order-1 order-md-2 ms-auto align-items-center">
-          <button class="icon-button me-3 position-relative" data-bs-toggle="offcanvas" data-bs-target="#notificationSidebar" aria-controls="notificationSidebar" aria-expanded="false" aria-label="Toggle Notifications">
+      <div class="d-flex order-1 order-md-2 ms-auto align-items-center">           
+          <button class="icon-button me-3 position-relative">
               <i class="fa-solid fa-bell text-white"></i>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 99+
@@ -82,11 +68,11 @@
               </span>
               <span class="visually-hidden">Notifications </span>
           </button>
-          <button class="icon-button me-3 position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar" aria-controls="cartSidebar" aria-expanded="false" aria-label="Toggle Shopping Cart">
+          <button class="icon-button me-3 position-relative">
               <i class="fa-solid fa-xs fa-cart-shopping text-white"></i>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                 5
-                <span class="visually-hidden">unread messages</span>
+                <span class="visually-hidden">Cart Items</span>
               </span>
               <span class="visually-hidden">Cart </span>
           </button>
@@ -106,75 +92,11 @@
                 </ul>
             </div>     
           </div>
-      </div>
+      </div>    
   </div>
 </nav>
+
 <!--END TOP NAV-->
-
-<!--NOTIFICATION SIDEBAR-->
-<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="notificationSidebar" aria-labelledby="notificationSidebar">
-  <div class="offcanvas-header border-bottom ">
-    <div class="offcanvas-title w-100" id="">
-      <div class="mt-2 ">
-        <h4 class="text-black-50">Notifications</h4>
-      </div> 
-    </div>
-    <button type="button" class="btn-close p-2 ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body px-4">
-      <div class="d-flex">
-        <div class="col-9">
-          <h6 class="text-black-50">Received Notifications (2)</h6>
-        </div>
-        <div class="col-3 d-flex justify-content-end align-items-center small">
-          <a href="#" class="text-main"><small>Clear</small></a>
-        </div>
-      </div>
-
-      <div class="row overflow-y-auto my-3">
-        <div class="col-12">
-          <div class="notifications sora-font">
-            <div class="row mb-4 border-bottom pb-2">
-              <div class="col-8">
-                <h6>Tutorial</h6>
-                <div class="message my-2">
-                  Want to know how BargainParrot works? We can send tutorials to your email.
-                  <p class="mt-2"><a href="#" class="text-danger fw-bold">Send email</a></p>             
-                </div>
-
-              </div>
-              <div class="col-4 d-flex align-content-center">
-                <img src="../assets/img/product_images/pizza.png" alt="Tutorial Image" class="rounded w-100 h-100 object-fit-cover">
-              </div>
-            </div>
-
-            <div class="row mb-4 border-bottom pb-2">
-              <div class="col-8">
-                <h6>Rate onboarding</h6>
-                <div class="message my-2">
-                  Help us serve you better, rate our onboarding process.
-                  <div class="rating mt-2 text-black-50">
-                    <i class="fa-regular fa-star" data-value="1"></i>
-                    <i class="fa-regular fa-star" data-value="2"></i>
-                    <i class="fa-regular fa-star" data-value="3"></i>
-                    <i class="fa-regular fa-star" data-value="4"></i>
-                    <i class="fa-regular fa-star" data-value="5"></i>
-                  </div>
-                  <p class="mt-2"><a href="#" class="text-danger fw-bold">Add Feedback</a></p>
-                </div>
-              </div>
-              <div class="col-4 d-flex align-content-center">
-                <img src="../assets/img/product_images/pizza.png" alt="Tutorial Image" class="rounded w-100 h-100 object-fit-cover">
-              </div>
-            </div>    
-                          
-          </div>
-        </div>
-      </div>
-
-  </div>
-</div>
-<!--END NOTIFICATION SIDEBAR-->
 
 <!--CONTENT AREA-->
 <div class="container-fluid">
@@ -186,20 +108,53 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="file" class="align-text-bottom"></span>
                   <i class="fas fa-address-card"></i> My Account
                 </a>
               </li>
 
               <li class="nav-item">
                 <a class="nav-link active" href="#" aria-current="page">
-                  <span data-feather="file" class="align-text-bottom"></span>
                   <i class="fas fa-history"></i> Order History
                 </a>
               </li>              
-
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-heart"></i> Wishlist
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-wallet"></i> Wallet
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-gift"></i> Referral
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-cog"></i> Settings
+                </a>
+              </li>     
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-comment-alt"></i> Feedback
+                </a>
+              </li>               
+              
             </ul>
-    
+
+            <div class="">
+                <a href="#" class="btn btn-main">
+                  <i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal"></i> Return to shop
+                </a>
+            </div>    
           </div>
         </nav>
     </div>
@@ -878,7 +833,7 @@
       if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
           sidebar.classList.remove('open');  // Close sidebar if clicking outside of it
       }
-  });    
+    });    
   </script>
   </body>
 </html>

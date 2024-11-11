@@ -716,6 +716,10 @@ img.thumbnail.active {
 
  #sidebarMenu {
     background-color: white;
+
+    .nav-item {
+        margin-bottom: 20px;
+    }
   }
 
   .hide-sidebar {
@@ -767,7 +771,7 @@ img.thumbnail.active {
   }
   
   .sidebar .nav-link.active {
-    color: #FFC75F;
+    color: #FC4100;
   }
   
   .sidebar .nav-link:hover .feather,
